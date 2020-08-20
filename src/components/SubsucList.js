@@ -18,7 +18,7 @@ const SubsucList = ( {state, dispatch }) => {
                   </tr>
                 </thead>
                 <tbody>
-                    { state.map((List, index) => (<ListItem key={index} event={List} dispatch={dispatch} />))}
+                    { state.map((List, index) => (<ListItem key={index} ListItem={List} dispatch={dispatch} />))}
                 </tbody>
             </table>
         </>
