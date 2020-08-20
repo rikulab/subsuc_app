@@ -3,7 +3,8 @@ import React from 'react'
 const ListItem = ({ dispatch, List }) => {
   const id = List.id
   const handleClickDeleteButton = () => {
-    dispatch({ type: 'DELETE_List', id })
+    const result = window.confirm(`イベント(id=${id})を本当に削除してもいいですか？`)
+    if (result) dispatch({ type: 'DELETE_List', id })
   }
 
   return (

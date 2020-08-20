@@ -1,10 +1,9 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import '../Styles/SubsucForm.css';
-import reducer from '../reducers'
-import ListItem from './ListItem';
+import './ListItem';
 
-const List = () => {
-    const [state, dispatch] = useReducer(reducer, [])
+const SubsucForm = ({ state, dispatch }) => {
+    //const [state, dispatch] = useReducer(reducer, [])
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('')
 
@@ -20,6 +19,8 @@ const List = () => {
         setPrice('')
     }
 
+    const unCreatable = title === '' || price === ''
+
     return (
         <>
             <h3>サブスクリプション追加フォーム</h3>
@@ -34,10 +35,10 @@ const List = () => {
                     <input value={price} onChange={ e => setPrice(e.target.value)} />
                 </div>
 
-                <button onClick={addList}>追加する</button>
+                <button onClick={addList} disabled={unCreatable}>追加する</button>
             </form>
         </>
     )
 }
 
-export default List;
+export default SubsucForm
