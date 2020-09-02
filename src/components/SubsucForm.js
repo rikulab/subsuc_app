@@ -3,7 +3,6 @@ import '../Styles/SubsucForm.css';
 import './ListItem';
 
 const SubsucForm = ({ state, dispatch }) => {
-    //const [state, dispatch] = useReducer(reducer, [])
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('')
 
@@ -17,6 +16,12 @@ const SubsucForm = ({ state, dispatch }) => {
 
         setTitle('')
         setPrice('')
+    }
+
+    const deleteAllLists = e => {
+        e.preventDefault()
+        const result = window.confirm('全てのイベントを本当に削除しても良いですか？')
+        if (result) dispatch({ type: 'DELETE_ALL_Lists' })
     }
 
     const unCreatable = title === '' || price === ''
@@ -36,6 +41,7 @@ const SubsucForm = ({ state, dispatch }) => {
                 </div>
 
                 <button onClick={addList} disabled={unCreatable}>追加する</button>
+                <button onClick={deleteAllLists} disabled={state.length === 0}>全てのイベントを削除する</button>
             </form>
         </>
     )

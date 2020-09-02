@@ -8,17 +8,17 @@ const SubsucList = ( {state, dispatch }) => {
     return (
         <>
             <h3>マイサブスクリプション</h3>
-            <table className="table">
+            <table className="table table-hover">
                 <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>タイトル</th>
-                    <th>値段</th>
-                    <th></th>
-                  </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>タイトル</th>
+                        <th>ボディー</th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                    { state.map((List, index) => (<ListItem key={index} ListItem={List} dispatch={dispatch} />))}
+                    { state.map((List, index) => (<ListItem key={index} List={List} dispatch={dispatch} />))}
                 </tbody>
             </table>
         </>

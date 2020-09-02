@@ -12,7 +12,7 @@ const ListItem = ({ dispatch, List }) => {
       <td>{id}</td>
       <td>{List.title}</td>
       <td>{List.price}</td>
-      <td><button type="button" className="btn btn-danger" onClick={handleClickDeleteButton}>削除</button></td>
+      <td><button type="button" onClick={handleClickDeleteButton}>削除</button></td>
     </tr>
   )
 }
