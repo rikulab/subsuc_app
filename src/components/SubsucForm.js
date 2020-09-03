@@ -6,8 +6,7 @@ const SubsucForm = ({ state, dispatch }) => {
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('')
 
-    const addList = e => {
-        e.preventDefualt()
+    const addList = () => {
         dispatch({
             type: 'CREATE_List',
             title,
@@ -18,8 +17,7 @@ const SubsucForm = ({ state, dispatch }) => {
         setPrice('')
     }
 
-    const deleteAllLists = e => {
-        e.preventDefault()
+    const deleteAllLists = () => {
         const result = window.confirm('全てのイベントを本当に削除しても良いですか？')
         if (result) dispatch({ type: 'DELETE_ALL_Lists' })
     }
