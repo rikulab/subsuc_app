@@ -10,7 +10,7 @@ const Lists = (state = [], action) => {
             // } else {
             //     id = state[length - 1]. id + 1
             // }
-        case 'DELTE_List':
+        case 'DELETE_List':
             return state.filter(List => List.id !== action.id)
         case 'DELETE_ALL_Lists':
             return []

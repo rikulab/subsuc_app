@@ -1,4 +1,6 @@
 import React from 'react'
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const ListItem = ({ dispatch, List }) => {
   const id = List.id
@@ -12,9 +14,14 @@ const ListItem = ({ dispatch, List }) => {
       <td>{id}</td>
       <td>{List.title}</td>
       <td>{List.price}</td>
-      <td><button type="button" onClick={handleClickDeleteButton}>削除</button></td>
+      <td><IconButton aria-label="delete" type="button" onClick={handleClickDeleteButton}>
+            <DeleteIcon fontSize="small" />
+          </IconButton>
+      </td>
     </tr>
   )
 }
 
 export default ListItem
+
+//<button type="button" onClick={handleClickDeleteButton}>削除</button>

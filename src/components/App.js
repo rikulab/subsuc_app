@@ -5,7 +5,6 @@ import AddIcon from './AddIcon';
 import SubsucForm from './SubsucForm';
 import SubsucList from './SubsucList';
 import reducer from '../reducers'
-import SpanningTable from './table';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, [])
@@ -16,7 +15,6 @@ function App() {
       <AddIcon />
       <SubsucForm state={state} dispatch={dispatch} />
       <SubsucList state={state} dispatch={dispatch} />
-      <SpanningTable />
     </div>
   );
 }
