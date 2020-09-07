@@ -17,10 +17,10 @@ const SubsucForm = ({ state, dispatch }) => {
         setPrice('')
     }
 
-    const deleteAllLists = () => {
-        const result = window.confirm('全てのイベントを本当に削除しても良いですか？')
-        if (result) dispatch({ type: 'DELETE_ALL_Lists' })
-    }
+    // const deleteAllLists = () => {
+    //     const result = window.confirm('全てのイベントを本当に削除しても良いですか？')
+    //     if (result) dispatch({ type: 'DELETE_ALL_Lists' })
+    // }
 
     const unCreatable = title === '' || price === ''
 
@@ -35,11 +35,11 @@ const SubsucForm = ({ state, dispatch }) => {
 
                 <div className="subsuc_price">
                     <label>　　　　値段　　　　</label>
-                    <input value={price} onChange={ e => setPrice(e.target.value)} />
+                    <input type="number" value={price} onChange={ e => setPrice(e.target.value)} />
                 </div>
 
                 <button onClick={addList} disabled={unCreatable}>追加する</button>
-                <button onClick={deleteAllLists} disabled={state.length === 0}>全てのイベントを削除する</button>
+                {/* <button onClick={deleteAllLists} disabled={state.length === 0}>全てのイベントを削除する</button> */}
             </form>
         </>
     )

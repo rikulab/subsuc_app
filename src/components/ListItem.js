@@ -14,14 +14,13 @@ const ListItem = ({ dispatch, List }) => {
       <td>{id}</td>
       <td>{List.title}</td>
       <td>{List.price}</td>
-      <td><IconButton aria-label="delete" type="button" onClick={handleClickDeleteButton}>
-            <DeleteIcon fontSize="small" />
-          </IconButton>
+      <td>
+        <IconButton aria-label="delete" type="button" onClick={handleClickDeleteButton}>
+          <DeleteIcon fontSize="small" />
+        </IconButton>
       </td>
     </tr>
   )
 }
 
 export default ListItem
-
-//<button type="button" onClick={handleClickDeleteButton}>削除</button>
