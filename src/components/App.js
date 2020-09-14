@@ -14,12 +14,15 @@ function App() {
     TotalPrice = TotalPrice + Number(data.price);
   })
 
+  console.log(state, 'App.js state');
+
   return (
     <div className="App">
       <AppBar />
       {/* <SubsucForm state={state} dispatch={dispatch} /> */}
       <SubsucList state={state} dispatch={dispatch} />
-      <span>TOTAL PRICE : ￥ {TotalPrice}</span>
+      <div>TOTAL PRICE : ￥ {TotalPrice}</div>
+      <div>TOTAL Subsucription : {state.length}</div>
       <AddIcon state={state} dispatch={dispatch}/>
     </div>
   );
